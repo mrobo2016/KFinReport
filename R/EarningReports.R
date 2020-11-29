@@ -7,7 +7,7 @@
 #' @param  corp_code is corporation code of the company you want to look for.
 #' @param  bsns_year is business year to look for. Default is current year.
 #' @param  reprt_name is report name to look for. (q1, h, q3, y)
-#' @param  fs_div is whether financial statements are consolidated or not. Default is CFS.
+#' @param  consolid is whether financial statements are consolidated or not. Default is c(consolid).
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom httr GET
@@ -55,12 +55,3 @@ report_earning1 <- function(crtfc_key, corp_code, bsns_year, reprt_name, consoli
   return(tibble::tibble(report))
 }
 
-crtfc_key <- "22e453fa898ad0aafafec060ebc22dd916f2b3ff"
-bsns_year <- '2019'
-corp_code <- '00126380'
-consolid <- "c"
-reprt_name <- "y"
-
-report_earning1(crtfc_key, corp_code, bsns_year, reprt_name, consolid ='c')
-change_labels('y')
-consolid_or_not('c')
