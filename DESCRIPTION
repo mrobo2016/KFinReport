@@ -1,15 +1,25 @@
 Package: KFinReport
-Title: What the Package Does (One Line, Title Case)
+Title: Handling Korea's Corporate Filings from DART
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Sang Sun",
+           family = "Ahn",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "sangsun.ahn@gmail.com")
+    person(given = "Jung Hwan",
+           family = "Kim",
+           role = c("aut", "cre"),
+           email = "stevekim01310@gmail.com")
+    person(given = "Su Wan",
+           family = "Kim",
+           role = c("aut", "cre"),
+           email = "swan3837@naver.com")
+Description: This package utilizes Korea's Repository of Corporate Filings (DART).
+    It's goal is to assist users to browse through the repository via R. 
+    Users are able to retrieve corporate filings as data.
+    Upon retrieval, users can select the corporate of interest, the time span,
+    types of report, etc. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
