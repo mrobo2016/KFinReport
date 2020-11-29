@@ -1,14 +1,12 @@
-
 #' Get a Single Companies' All Financial Statement
 #'
 #' Get Financial Statement for korea finance market
-#'
 #'  사업, 반기, 분기 보고서
 #' @param crtfc_key is API certification key issued by openDART.
 #' @param  corp_code is corporation code of the company you want to look for.
 #' @param  bsns_year is business year to look for. Default is current year.
 #' @param  reprt_name is report name to look for. (q1, h, q3, y)
-#' @param  fs_div is whether financial statements are consolidated or not. Default is CFS.
+#' @param  consolid is whether financial statements are consolidated or not. Default is c(consolid).
 #' @return a [tibble][tibble::tibble-package]
 #' @importFrom httr GET
 #' @importFrom jsonlite fromJSON
@@ -30,8 +28,8 @@ report_earning1 <- function(crtfc_key, corp_code, bsns_year, reprt_name, consoli
   return(tibble::tibble(report))
 }
 
-
 change_labels <- function(reprt_name){
+  x = ''
   if (reprt_name == 'y'){
     x = '11011'
   } else if (reprt_name == 'h'){
@@ -45,11 +43,11 @@ change_labels <- function(reprt_name){
 }
 
 consolid_or_not <- function(consolid){
-  if (reprt_name == 'c'){
+  x = ''
+  if (consolid == 'c'){
     x = 'CFS'
-  } else if (reprt_name == 'nc'){
+  } else if (consolid == 'nc'){
     x = 'OFS'
   }
   return(x)
 }
-

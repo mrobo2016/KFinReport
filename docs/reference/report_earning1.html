@@ -47,7 +47,8 @@
 
 
 <meta property="og:title" content="Get a Single Companies' All Financial Statement — report_earning1" />
-<meta property="og:description" content="Get Financial Statement for korea finance market" />
+<meta property="og:description" content="Get Financial Statement for korea finance market
+사업, 반기, 분기 보고서" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -117,7 +118,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Get Financial Statement for korea finance market</p>
+    <p>Get Financial Statement for korea finance market
+사업, 반기, 분기 보고서</p>
     </div>
 
     <pre class="usage"><span class='fu'>report_earning1</span><span class='op'>(</span><span class='va'>crtfc_key</span>, <span class='va'>corp_code</span>, <span class='va'>bsns_year</span>, <span class='va'>reprt_name</span>, consolid <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span></pre>
@@ -142,17 +144,14 @@
       <td><p>is report name to look for. (q1, h, q3, y)</p></td>
     </tr>
     <tr>
-      <th>fs_div</th>
-      <td><p>is whether financial statements are consolidated or not. Default is CFS.</p></td>
+      <th>consolid</th>
+      <td><p>is whether financial statements are consolidated or not. Default is c(consolid).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a></p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>사업, 반기, 분기 보고서</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

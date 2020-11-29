@@ -15,14 +15,12 @@ report_earning1(crtfc_key, corp_code, bsns_year, reprt_name, consolid = "c")
 
 \item{reprt_name}{is report name to look for. (q1, h, q3, y)}
 
-\item{fs_div}{is whether financial statements are consolidated or not. Default is CFS.}
+\item{consolid}{is whether financial statements are consolidated or not. Default is c(consolid).}
 }
 \value{
 a \link[tibble:tibble-package]{tibble}
 }
 \description{
 Get Financial Statement for korea finance market
-}
-\details{
 사업, 반기, 분기 보고서
 }
