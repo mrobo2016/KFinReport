@@ -7,6 +7,11 @@ install <- function(){
   pw <- askpass::askpass("Please paste your API KEY here.")
   crtfc_key <- pw
 
-  # csv 파일 경로 추가해야되나
+  # corp_code_path <- askpass::askpass("Please paste your Coportation Code csv here.")
+  # corpcode = read.csv(corp_code_path, encoding  = 'CP949')
 }
 
+#' @export
+get_corpcode <- function(corpname){
+  ty
+}

@@ -1,0 +1,11 @@
+load("/Users/KimJungHwan/Desktop/m-Robo/RTHON/corp_git/KFinReport/data/corp_code.rda")
+load("/Users/KimJungHwan/Desktop/m-Robo/RTHON/corp_git/KFinReport/data/corp_code.rda")
+load("/Users/KimJungHwan/Desktop/m-Robo/RTHON/corp_git/KFinReport/data/corp_code.rda")
+print(load("/Users/KimJungHwan/Desktop/m-Robo/RTHON/corp_git/KFinReport/data/corp_code.rda"))
+a<-load("/Users/KimJungHwan/Desktop/m-Robo/RTHON/corp_git/KFinReport/data/corp_code.rda")
+a
+a[0]
+a[3]
+a
+a[0][0]
+print(a)

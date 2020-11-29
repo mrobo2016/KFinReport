@@ -5,11 +5,11 @@ Authors@R:
     person(given = "Sang Sun",
            family = "Ahn",
            role = c("aut", "cre"),
-           email = "sangsun.ahn@gmail.com")
+           email = "sangsun.ahn@gmail.com"),
     person(given = "Jung Hwan",
            family = "Kim",
            role = c("aut", "cre"),
-           email = "stevekim01310@gmail.com")
+           email = "stevekim01310@gmail.com"),
     person(given = "Su Wan",
            family = "Kim",
            role = c("aut", "cre"),
@@ -24,8 +24,9 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports : 
+Imports: 
     askpass,
     fs,
-    path
-
+    httr,
+    jsonlite,
+    tibble
