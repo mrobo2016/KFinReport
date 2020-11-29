@@ -15,6 +15,7 @@
 #' @importFrom tibble tibble
 
 change_labels <- function(reprt_name){
+  x = ''
   if (reprt_name == 'y'){
     x = '11011'
   } else if (reprt_name == 'h'){
@@ -28,9 +29,10 @@ change_labels <- function(reprt_name){
 }
 
 consolid_or_not <- function(consolid){
-  if (reprt_name == 'c'){
+  x = ''
+  if (consolid == 'c'){
     x = 'CFS'
-  } else if (reprt_name == 'nc'){
+  } else if (consolid == 'nc'){
     x = 'OFS'
   }
   return(x)
@@ -52,3 +54,13 @@ report_earning1 <- function(crtfc_key, corp_code, bsns_year, reprt_name, consoli
   report <- data$list
   return(tibble::tibble(report))
 }
+
+crtfc_key <- "22e453fa898ad0aafafec060ebc22dd916f2b3ff"
+bsns_year <- '2019'
+corp_code <- '00126380'
+consolid <- "c"
+reprt_name <- "y"
+
+report_earning1(crtfc_key, corp_code, bsns_year, reprt_name, consolid ='c')
+change_labels('y')
+consolid_or_not('c')
