@@ -10,8 +10,3 @@ install <- function(){
   # corp_code_path <- askpass::askpass("Please paste your Coportation Code csv here.")
   # corpcode = read.csv(corp_code_path, encoding  = 'CP949')
 }
-
-#' @export
-get_corpcode <- function(corpname){
-  ty
-}
