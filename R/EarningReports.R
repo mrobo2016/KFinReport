@@ -19,23 +19,26 @@ report_earning1 <- function(crtfc_key, corp_name, bsns_year, reprt_name, consoli
   reprt_code <- change_labels(reprt_name)
   fs_div <- consolid_or_not(consolid)
   corp_code <- change_corpname(corp_name)
+
   res <- httr::GET(url = 'https://opendart.fss.or.kr/api/fnlttSinglAcntAll.json',
                    query = list(crtfc_key = I(x = crtfc_key),
                                 corp_code = corp_code,
                                 bsns_year =bsns_year,
                                 reprt_code = reprt_code,
                                 fs_div = fs_div ))
+
   data <- jsonlite::fromJSON(res$url)
+
   report <- data$list
   return(tibble::tibble(report))
 }
 
 
-# 기업명 -> 기업코드
+#' @import dplyr stringr jsonlite tibble
 change_corpname <- function(corpname){
   corpcode <- corp_code %>%
     dplyr::filter(stringr::str_detect(corp_name, corpname)) %>%
-    select('corp_code') %>% as.character() %>%
+    dplyr::select('corp_code') %>% as.character() %>%
     stringr::str_pad(., 8, side = c('left') , pad = '0')
   return(corpcode)
 }

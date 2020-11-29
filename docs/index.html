@@ -70,24 +70,51 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
-
 <div id="kfinreport" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#kfinreport" class="anchor"></a>KFinReport</h1></div>
-<p>Handling Korea’s Corporate Filings from DART</p>
-<p>View Source Code : <a href="https://github.com/mrobo2016/KFinReport">source code</a>, or read this document for a tutorial on creating R packages.</p>
-</div>
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>This package utilizes Korea’s Repository of Corporate Filings (DART). It’s goal is to assist users to browse through the repository via R. Users are able to retrieve corporate filings as data. Upon retrieval, users can select the corporate of interest, the time span, types of report, etc.</p>
-</div>
-<div id="kfin-package-tutorial" class="section level1">
-<h1 class="hasAnchor">
-<a href="#kfin-package-tutorial" class="anchor"></a>KFin Package tutorial</h1>
-</div>
+<!-- badges: start -->
 
+<p>Handling Korea’s Corporate Filings from DART</p>
+<p>This package utilizes Korea’s Repository of Corporate Filings (DART). It’s goal is to assist users to browse through the repository via R. Users are able to retrieve corporate filings as data. Upon retrieval, users can select the corporate of interest, the time span, types of report, etc.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version of KFinReport from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"KFinReport"</span><span class="op">)</span></code></pre></div>
+<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"mrobo2016/KFinReport"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<p>This is a basic example which shows you how to solve a common problem:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">KFinReport</span><span class="op">)</span>
+<span class="va">ss</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/report_earning1.html">report_earning1</a></span><span class="op">(</span><span class="st">"22e453fa898ad0aafafec060ebc22dd916f2b3ff"</span>, <span class="st">"삼성전자"</span>, <span class="st">"2019"</span> ,<span class="st">"y"</span>, <span class="st">"c"</span> <span class="op">)</span>
+<span class="va">ss</span> 
+<span class="co">#&gt; # A tibble: 210 x 17</span>
+<span class="co">#&gt;    rcept_no reprt_code bsns_year corp_code sj_div sj_nm account_id account_nm</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;     </span>
+<span class="co">#&gt;  1 2020033… 11011      2019      00126380  BS     재무상태… ifrs-full… 유동자산  </span>
+<span class="co">#&gt;  2 2020033… 11011      2019      00126380  BS     재무상태… ifrs-full… 현금및현금성자산…</span>
+<span class="co">#&gt;  3 2020033… 11011      2019      00126380  BS     재무상태… dart_Shor… 단기금융상품…</span>
+<span class="co">#&gt;  4 2020033… 11011      2019      00126380  BS     재무상태… -표준계정코드 미… 단기매도가능금융자…</span>
+<span class="co">#&gt;  5 2020033… 11011      2019      00126380  BS     재무상태… -표준계정코드 미… 단기상각후원가금융…</span>
+<span class="co">#&gt;  6 2020033… 11011      2019      00126380  BS     재무상태… ifrs-full… 단기당기손익-공정…</span>
+<span class="co">#&gt;  7 2020033… 11011      2019      00126380  BS     재무상태… dart_Shor… 매출채권  </span>
+<span class="co">#&gt;  8 2020033… 11011      2019      00126380  BS     재무상태… -표준계정코드 미… 미수금    </span>
+<span class="co">#&gt;  9 2020033… 11011      2019      00126380  BS     재무상태… -표준계정코드 미… 선급금    </span>
+<span class="co">#&gt; 10 2020033… 11011      2019      00126380  BS     재무상태… -표준계정코드 미… 선급비용  </span>
+<span class="co">#&gt; # … with 200 more rows, and 9 more variables: account_detail &lt;chr&gt;,</span>
+<span class="co">#&gt; #   thstrm_nm &lt;chr&gt;, thstrm_amount &lt;chr&gt;, frmtrm_nm &lt;chr&gt;, frmtrm_amount &lt;chr&gt;,</span>
+<span class="co">#&gt; #   bfefrmtrm_nm &lt;chr&gt;, bfefrmtrm_amount &lt;chr&gt;, ord &lt;chr&gt;,</span>
+<span class="co">#&gt; #   thstrm_add_amount &lt;chr&gt;</span></code></pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

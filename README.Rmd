@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# KFinReport
+
+<!-- badges: start -->
+[![R build status](https://github.com/mrobo2016/KFinReport/workflows/R-CMD-check/badge.svg)](https://github.com/mrobo2016/KFinReport/actions)
+<!-- badges: end -->
+
+
+
+Handling Korea's Corporate Filings from DART
+
+This package utilizes Korea's Repository of Corporate Filings (DART).
+It's goal is to assist users to browse through the repository via R. 
+Users are able to retrieve corporate filings as data.
+Upon retrieval, users can select the corporate of interest, the time span, types of report, etc. 
+
+
+## Installation
+
+You can install the released version of KFinReport from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("KFinReport")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("mrobo2016/KFinReport")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(KFinReport)
+ss <- report_earning1("22e453fa898ad0aafafec060ebc22dd916f2b3ff", "삼성전자", "2019" ,"y", "c" )
+ss 
+```

@@ -29,4 +29,9 @@ Imports:
     fs,
     httr,
     jsonlite,
-    tibble
+    tibble,
+    magrittr,
+    dplyr,
+    stringr
+Depends: 
+    R (>= 3.5)

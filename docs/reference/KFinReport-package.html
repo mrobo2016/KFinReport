@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get a Single Companies' All Financial Statement — report_earning1 • KFinReport</title>
+<title>KFinReport: Handling Korea's Corporate Filings from DART — KFinReport-package • KFinReport</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,12 @@
 
 
 
-<meta property="og:title" content="Get a Single Companies' All Financial Statement — report_earning1" />
-<meta property="og:description" content="Get Financial Statement for korea finance market" />
+<meta property="og:title" content="KFinReport: Handling Korea's Corporate Filings from DART — KFinReport-package" />
+<meta property="og:description" content="This package utilizes Korea's Repository of Corporate Filings (DART).
+    It's goal is to assist users to browse through the repository via R. 
+    Users are able to retrieve corporate filings as data.
+    Upon retrieval, users can select the corporate of interest, the time span,
+    types of report, etc." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -111,45 +115,24 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get a Single Companies' All Financial Statement</h1>
+    <h1>KFinReport: Handling Korea's Corporate Filings from DART</h1>
     
-    <div class="hidden name"><code>report_earning1.Rd</code></div>
+    <div class="hidden name"><code>KFinReport-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get Financial Statement for korea finance market</p>
+    <p>This package utilizes Korea's Repository of Corporate Filings (DART).
+    It's goal is to assist users to browse through the repository via R. 
+    Users are able to retrieve corporate filings as data.
+    Upon retrieval, users can select the corporate of interest, the time span,
+    types of report, etc.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>report_earning1</span><span class='op'>(</span><span class='va'>crtfc_key</span>, <span class='va'>corp_name</span>, <span class='va'>bsns_year</span>, <span class='va'>reprt_name</span>, consolid <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>crtfc_key</th>
-      <td><p>is API certification key issued by openDART.</p></td>
-    </tr>
-    <tr>
-      <th>corp_name</th>
-      <td><p>is corporation name of the company you want to look for.</p></td>
-    </tr>
-    <tr>
-      <th>bsns_year</th>
-      <td><p>is business year to look for. Default is current year.</p></td>
-    </tr>
-    <tr>
-      <th>reprt_name</th>
-      <td><p>is report name to look for. Can be q1, h, q3, y.</p></td>
-    </tr>
-    <tr>
-      <th>consolid</th>
-      <td><p>is whether financial statements are consolidated or not. Can be c, nc. Default is c.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
-    <p>a <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a></p>
+    <p><strong>Maintainer</strong>: Sang Sun Ahn <a href='mailto:sangsun.ahn@gmail.com'>sangsun.ahn@gmail.com</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

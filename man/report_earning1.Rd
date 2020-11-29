@@ -4,23 +4,22 @@
 \alias{report_earning1}
 \title{Get a Single Companies' All Financial Statement}
 \usage{
-report_earning1(crtfc_key, corp_code, bsns_year, reprt_name, consolid = "c")
+report_earning1(crtfc_key, corp_name, bsns_year, reprt_name, consolid = "c")
 }
 \arguments{
 \item{crtfc_key}{is API certification key issued by openDART.}
 
-\item{corp_code}{is corporation code of the company you want to look for.}
+\item{corp_name}{is corporation name of the company you want to look for.}
 
 \item{bsns_year}{is business year to look for. Default is current year.}
 
-\item{reprt_name}{is report name to look for. (q1, h, q3, y)}
+\item{reprt_name}{is report name to look for. Can be q1, h, q3, y.}
 
-\item{consolid}{is whether financial statements are consolidated or not. Default is c(consolid).}
+\item{consolid}{is whether financial statements are consolidated or not. Can be c, nc. Default is c.}
 }
 \value{
 a \link[tibble:tibble-package]{tibble}
 }
 \description{
 Get Financial Statement for korea finance market
-사업, 반기, 분기 보고서
 }
