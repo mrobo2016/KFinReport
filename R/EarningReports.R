@@ -3,16 +3,33 @@
 #'
 #' Get Financial Statement for korea finance market
 #'
+#'  사업, 반기, 분기 보고서
 #' @param crtfc_key is API certification key issued by openDART.
 #' @param  corp_code is corporation code of the company you want to look for.
 #' @param  bsns_year is business year to look for. Default is current year.
 #' @param  reprt_name is report name to look for. (q1, h, q3, y)
 #' @param  fs_div is whether financial statements are consolidated or not. Default is CFS.
 #' @return a [tibble][tibble::tibble-package]
-#' @export
 #' @importFrom httr GET
 #' @importFrom jsonlite fromJSON
 #' @importFrom tibble tibble
+#' @export
+report_earning1 <- function(crtfc_key, corp_code, bsns_year, reprt_name, consolid ='c'){
+
+  reprt_code <- change_labels(reprt_name)
+  fs_div <- consolid_or_not(consolid)
+
+  res <- httr::GET(url = 'https://opendart.fss.or.kr/api/fnlttSinglAcntAll.json',
+                   query = list(crtfc_key = I(x = crtfc_key),
+                                corp_code = corp_code,
+                                bsns_year =bsns_year,
+                                reprt_code = reprt_code,
+                                fs_div = fs_div ))
+  data <- jsonlite::fromJSON(res$url)
+  report <- data$list
+  return(tibble::tibble(report))
+}
+
 
 change_labels <- function(reprt_name){
   if (reprt_name == 'y'){
@@ -36,19 +53,3 @@ consolid_or_not <- function(consolid){
   return(x)
 }
 
-# 사업, 반기, 분기 보고서
-report_earning1 <- function(crtfc_key, corp_code, bsns_year, reprt_name, consolid ='c'){
-
-  reprt_code <- change_labels(reprt_name)
-  fs_div <- consolid_or_not(consolid)
-
-  res <- httr::GET(url = 'https://opendart.fss.or.kr/api/fnlttSinglAcntAll.json',
-                   query = list(crtfc_key = I(x = crtfc_key),
-                                corp_code = corp_code,
-                                bsns_year =bsns_year,
-                                reprt_code = reprt_code,
-                                fs_div = fs_div ))
-  data <- jsonlite::fromJSON(res$url)
-  report <- data$list
-  return(tibble::tibble(report))
-}
