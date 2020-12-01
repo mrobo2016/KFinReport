@@ -39,7 +39,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(KFinReport)
-ss <- report_earning1("22e453fa898ad0aafafec060ebc22dd916f2b3ff", "삼성전자", "2019" ,"y", "c" )
+ss <- report_earning1("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "삼성전자", "2019" ,"y", "c" )
 ss 
 #> # A tibble: 210 x 17
 #>    rcept_no reprt_code bsns_year corp_code sj_div sj_nm account_id account_nm
